@@ -10,8 +10,8 @@ Variable Name | Value | Description | Device-specific
 ## Mali DDK Installation
 
 1. Unzip `mali_ddk_7.0-0_v0.21.zip`
-2. Copy `ddk/opengl-es-mali-utgard-7.0-0.armv7hl.rpm` to `<PROJECT>/Dockerbin/mali/ddk/`
-3. Extract `test/glmark2.tar.gz` and move the contents in <PROJECT>/Dockerbin/mali/test/
+2. Copy `mali_ddk_7.0-0_v0.21/ddk/opengl-es-mali-utgard-7.0-0.armv7hl.rpm` to `<PROJECT>/Dockerbin/mali/ddk/`
+3. Extract `mali_ddk_7.0-0_v0.21/test/glmark2.tar.gz` and move the contents in <PROJECT>/Dockerbin/mali/test/
 4. `git add` the new files
 5. commit and `git push resin master`
 
