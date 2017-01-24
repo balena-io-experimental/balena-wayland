@@ -1,0 +1,18 @@
+{
+    "device": "/dev/dri/card0",
+    "hwcursor": false,
+    "outputs": [
+            {
+                "name": "LVDS1",
+                "mode": "1024x600"
+            },
+            {
+                "name": "UNKNOWN1",
+                "mode": "1080x1920"
+            },
+            {
+                "name": "HDMI1",
+                "mode": "1920x1080"
+            }
+        ]
+}

@@ -1,0 +1,40 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-fedora-node:6.9.2-slim
+
+# Install free and non-free media packages
+RUN dnf install --verbose -yq dnf-plugins-core && dnf copr enable --verbose -yq stransky/firefox-wayland && \
+  dnf install --verbose -yq \
+  http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+  http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
+&& dnf clean all
+
+# Install dnf dependencies
+RUN dnf install --verbose -yq \
+  gtk3 \
+  weston && dnf clean all
+
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Move package.json to filesystem
+COPY ./app/package.json ./
+
+# NPM i app
+RUN JOBS=MAX npm i --production
+
+# Move app to filesystem
+COPY ./app ./
+
+# Mali
+COPY ./Dockerbin/mali/ddk/opengl-es-mali-utgard-7.0-0.armv7hl.rpm .
+RUN dnf install -yq opengl-es-mali-utgard-7.0-0.armv7hl.rpm && rm opengl-es-mali-utgard-7.0-0.armv7hl.rpm
+COPY ./Dockerbin/mali/weston.ini /root/config/
+
+# GLMARK
+COPY ./Dockerbin/mali/test/glmark2-2014.03-6.fc24.armv7hl.rpm .
+RUN dnf install -yq glmark2-2014.03-6.fc24.armv7hl.rpm && rm glmark2-2014.03-6.fc24.armv7hl.rpm
+
+## uncomment if you want systemd
+ENV INITSYSTEM on
+
+# Start app
+CMD ["bash", "/usr/src/app/start.sh"]
