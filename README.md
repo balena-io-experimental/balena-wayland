@@ -5,7 +5,7 @@ A wayland + weston + Mali DRM boilerplate
 Variable Name | Value | Description | Device-specific
 ------------ | ------------- | ------------- | -------------
 **`XDG_RUNTIME_DIR`** | `/run/shm/wayland` |  |
-**`DEMO_MODE`** | `standalone` | if set to `standalone` fires upp full-screen glmark2 demo in a loop, if set to `desktop` starts a wayland-weston session on the screen with a terminal pre-installed. |
+**`DEMO_MODE`** | `standalone` | if set to `standalone` fires up full-screen glmark2 demo in a loop, if set to `desktop` starts a wayland-weston session on the screen with a terminal pre-installed. |
 
 ## Mali DDK Installation
 
