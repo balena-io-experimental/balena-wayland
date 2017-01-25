@@ -15,12 +15,6 @@ RUN dnf install --verbose -yq \
 # Move to app dir
 WORKDIR /usr/src/app
 
-# Move package.json to filesystem
-COPY ./app/package.json ./
-
-# NPM i app
-RUN JOBS=MAX npm i --production
-
 # Move app to filesystem
 COPY ./app ./
 
