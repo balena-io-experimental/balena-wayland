@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/node,windows,osx,linux
 
+### EULA based MALI DDK ###
+opengl-es-mali-utgard-*
+glmark2.tar.gz
+
 ### Node ###
 # Logs
 logs
