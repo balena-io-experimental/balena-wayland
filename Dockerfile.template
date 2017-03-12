@@ -11,9 +11,8 @@ RUN dnf install --verbose -yq dnf-plugins-core && \
 RUN dnf install --verbose -yq \
   gtk3 \
   weston \
-  libav-tools \
+  ffmpeg \
   mplayer \
-  fbi \
   && dnf clean all
 
 # Move to app dir
