@@ -1,11 +1,8 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-fedora-node:6.9-slim
 
-# Install free and non-free media packages
-RUN dnf install --verbose -yq dnf-plugins-core && \
-  && dnf clean all
-
 # Install dnf dependencies
 RUN dnf install --verbose -yq \
+  dnf-plugins-core \
   gtk3 \
   weston \
   ffmpeg \
