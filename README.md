@@ -1,5 +1,5 @@
 # resin-wayland
-A wayland + weston + Mali DRM boilerplate
+A wayland + weston + Mali DRM boilerplate for Artik710
 
 ## Configure via [environment variables](https://docs.resin.io/management/env-vars/)
 Variable Name | Value | Description | Device-specific
